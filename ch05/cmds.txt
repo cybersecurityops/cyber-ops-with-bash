@@ -1,0 +1,10 @@
+#Linux Command   |MSWin  Bash |XML tag    |Purpose
+#----------------+------------+-----------+------------------------------
+uname -a         |uname -a    |uname      |O.S. version etc
+cat /proc/cpuinfo|systeminfo  |sysinfo    |system hardware and related info
+ifconfig         |ipconfig    |nwinterface|Network interface information
+ip route         |route print |nwroute    |routing table
+arp -a           |arp -a      |nwarp      |ARP table
+netstat -a       |netstat -a  |netstat    |network connections
+mount            |net share   |diskinfo   |mounted disks
+ps -e            |tasklist    |processes  |running processes

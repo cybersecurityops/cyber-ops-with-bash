@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# checkemail.sh - check an email address against
+#                 the Have I Been Pwned? database
+#		  in 1 line
+
+EMAILIN="$1"
+if (( "$#" == 0 ))                     #<1>
+then
+    printf 'Enter email address: '
+    read EMAILIN
+fi
+EMAILIN="https://haveibeenpwned.com/api/v2/breachedaccount/$EMAILIN"
+
+echo 'Account pwned in the following breaches:'
+curl -s "$EMAILIN" | grep -Po '"Name":".*?"' | cut -d':' -f2 | tr -d '\"'  #<2>

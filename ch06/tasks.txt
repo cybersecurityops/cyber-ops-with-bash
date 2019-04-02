@@ -1,0 +1,6 @@
+
+Image Name;PID;Session Name;Session#;Mem Usage
+System Idle Process;0;Services;0;4 K
+System;4;Services;0;2,140 K
+smss.exe;340;Services;0;1,060 K
+csrss.exe;528;Services;0;4,756 K

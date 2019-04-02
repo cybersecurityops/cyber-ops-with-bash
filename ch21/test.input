@@ -1,0 +1,9 @@
+file  ./TODO.txt
+!file  ./validate.sh
+!file nogo.sh
+user albing
+!user bob
+group mysql
+!group skip
+hash a7f36f4519661cf2aaaf0ebf057f768fc35dafe8  validate.sh
+hash b79f70b18538de0199e6829e06b547e079df8842  /bin/ls

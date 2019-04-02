@@ -1,0 +1,5 @@
+user,ip
+jdoe,10.0.4.2
+jsmith,10.0.4.35
+msmith,10.0.4.107
+tjones,10.0.4.145

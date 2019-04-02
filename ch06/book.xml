@@ -1,0 +1,10 @@
+<book title="Cybersecurity Ops with bash" edition="1"> <1>
+  <author> <2>
+    <firstName>Paul</firstName> <3>
+    <lastName>Troncone</lastName>
+  </author> <4>
+  <author>
+    <firstName>Carl</firstName>
+    <lastName>Albing</lastName>
+  </author>
+</book>
