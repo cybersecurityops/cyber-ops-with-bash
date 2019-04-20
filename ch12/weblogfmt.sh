@@ -7,7 +7,7 @@
 # Read in Apache web log and output as HTML
 #
 # Usage:
-# weblogfmt.sh < input.file > output.file
+# weblogfmt.sh input.file > output.file
 #
 
 function tagit()
