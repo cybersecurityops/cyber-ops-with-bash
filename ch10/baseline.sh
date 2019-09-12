@@ -1,16 +1,7 @@
-#!/bin/bash -
-#
-# Cybersecurity Ops with bash
-# baseline.sh
-#
-# Description: 
-# Creates a file system baseline or compares current
-# file system to previous baseline
-#
-# Usage: ./baseline.sh [-d path] <file1> [<file2>]
-#   -d Starting directory for baseline
-#   <file1> If only 1 file specified a new baseline is created
-#   [<file2>] Previous baseline file to compare
+#!/bin/bash
+
+# baseline.sh - compare baselines
+#              and report on differences
 #
 
 function usageErr ()
@@ -26,28 +17,30 @@ function dosumming ()
     find "${DIR[@]}" -type f | xargs -d '\n' sha1sum           # <2>
 }
 
-function parseArgs ()
-{
-    while getopts "d:" MYOPT                                   # <3>
-    do
-	# no check for MYOPT since there is only one choice
-	DIR+=( "$OPTARG" )                                     # <4>
-    done
-    shift $((OPTIND-1))                                        # <5>
-
-    # no arguments? too many?
-    (( $# == 0 || $# > 2 )) &&  usageErr 
-
-    (( ${#DIR[*]} == 0 )) && DIR=( "/" )                       # <6>
-
-}
+# ===============================
+# MAIN
+# ===============================
 
 declare -a DIR
+
+# ---------- parse the arguments 
+
+while getopts "d:" MYOPT                                   # <3>
+do
+    # no check for MYOPT since there is only one choice
+    DIR+=( "$OPTARG" )                                     # <4>
+done
+shift $((OPTIND-1))                                        # <5>
+
+# no arguments? too many?
+(( $# == 0 || $# > 2 )) &&  usageErr 
+
+(( ${#DIR[*]} == 0 )) && DIR=( "/" )                       # <6>
+
 
 # create either a baseline (only 1 filename provided)
 # or a secondary summary (when two filenames are provided)
 
-parseArgs
 BASE="$1"
 B2ND="$2"
 
@@ -64,7 +57,7 @@ then
     usageErr
 fi
 
-
+# --------- on to the actual work:
 
 # if 2nd file exists just compare the two
 # else create/fill it
@@ -125,3 +118,4 @@ do
 done
 
 printf '</filesystem>\n'
+
