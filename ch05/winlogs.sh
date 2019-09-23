@@ -7,9 +7,9 @@
 # Gather copies of Windows log files
 #
 # Usage:
-# winlogs.sh [-z]
-#   -z Tar and zip the output
-#
+# winlogs.sh [-z] [dir]
+#   -z   Tar and zip the output
+#   dir  Optional scratch directory for holding the log files
 
 TGZ=0
 if (( $# > 0 ))						# <1>
@@ -17,7 +17,7 @@ then
     if [[ ${1:0:2} == '-z' ]]				# <2>
     then
 	TGZ=1	# tgz flag to tar/zip the log files
- shift
+	shift
     fi
 fi
 SYSNAM=$(hostname)
