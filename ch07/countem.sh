@@ -18,6 +18,6 @@ done
 # now display what we counted
 # for each key in the (key, value) assoc. array
 for id in "${!cnt[@]}"                           # <4>
-do
-    printf '%d %s\n'  "${cnt[$id]}"  "$id"       # <5>
+do    
+	printf '%s %d\n'  "$id"  "${cnt[$id]}"       # <5>
 done
