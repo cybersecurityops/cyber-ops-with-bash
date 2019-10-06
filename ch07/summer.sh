@@ -17,5 +17,5 @@ do
 done
 for id in "${!cnt[@]}"
 do
-    printf "%-15s %8d\n"  "${id}"  "${cnt[${id}]}" <1>
+    printf "%-15s %8d\n"  "${id}"  "${cnt[${id}]}" #<1>
 done
