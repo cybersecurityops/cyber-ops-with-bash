@@ -18,5 +18,5 @@ function aschar ()
 #
 function asnum ()
 {
-    printf '%d' \"$1                        # <4>
+    printf '%d' "\"$1"                        # <4>
 }
